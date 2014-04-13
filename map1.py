@@ -1,8 +1,11 @@
 from random import randint
+from mapGenerator import MapGenerator
 import os
+import math
 
 class Map1:
-  map1 = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  map1 = MapGenerator().getMap()
+  '''[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
           [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1],
           [1,1,1,1,1,0,0,0,0,0,0,0,0,0,0],
           [0,0,0,0,1,0,0,0,0,1,0,0,0,0,0],
@@ -16,7 +19,7 @@ class Map1:
           [0,0,0,0,0,0,0,1,1,1,1,0,0,0,0],
           [0,0,0,0,0,0,0,1,0,0,1,0,0,0,0],
           [0,0,0,0,0,0,0,1,0,0,1,0,0,0,0],
-          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+          [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]'''
 
   def printMap(self):
     os.system('clear')
@@ -54,3 +57,25 @@ class Map1:
 
   def setPos(self, x, y, value):
     self.map1[x][y] = value
+
+#  def vision(self, x, y, dire):
+#    if   dire == "w":
+#      angle = 135
+#    elif dire == "s":
+#      angle = 315 
+#    elif dire == "d":  
+#      angle = 45
+#    elif dire == "a":
+#      angle = 225
+#    f1 = (lambda xa: tan(radians(angle))*(xa - x) + y)
+#    f2 = (lambda xa: tan(radians(angle-90))*(xa - x) + y)
+#    i,j = 0
+#    for lines in self.map1:
+#      j=0;
+#      for square in line:
+#        if(dire == "w" or dire == "s"):
+#          
+#        else:
+#
+#        j+=1
+#      i+=1

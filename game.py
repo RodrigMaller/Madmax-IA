@@ -60,7 +60,11 @@ class GameServer(Thread):
     self.map1.setPos(pos[0], pos[1], 0)
     del self.players[addr]
 
+  #def vision(self, x, y, aux):
+
   def playerVision(self, player):
+    map2 = [[-1 for col in range(len(self.map1.map1[0]))] for row in range(len(self.map1.map1))]
+    pos  = player.getPos() 
     return 'oi'
 
   def shoot(self, player):
@@ -109,4 +113,4 @@ class GameServer(Thread):
       self.updateBullets(2)
       self.updatePlayers()
       self.map1.printMap()
-      time.sleep(1)
+      time.sleep(0.3)
