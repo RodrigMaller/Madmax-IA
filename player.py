@@ -1,6 +1,16 @@
-class Player:
-  life = 1
-  dire = 'w' 
+import sys, os
+import pygame
+from Shot import Shot
+from pygame.locals import *
+
+class Player(pygame.sprite.Sprite):
+  def __init__ (self, addr, pos, image):
+    pygame.sprite.Sprite.__init__(self)
+    self.image, self.rect = image
+    self.addr = addr
+    self.pos  = pos
+    self.life = 1
+    self.dire = 'w'
   
   def move(self, map1):
     newPos = [self.pos[0],self.pos[1]]
@@ -31,9 +41,3 @@ class Player:
 
   def getLife(self):
     return self.life
-
-  def __init__ (self, addr, pos):
-    self.addr = addr
-    self.pos  = pos
-
-
